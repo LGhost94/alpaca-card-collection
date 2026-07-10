@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coleção - Alpaca Cromos</title>
+
+    <link rel="icon" type="image/png" href="/images/alpaca.png?v=3">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">
+        <img src="/images/alpaca.png" class="logo-img">
+        Alpaca Cromos
+    </div>
+
+    <div class="menu">
+        <a href="/">Início</a>
+        <a href="/packs">Packs</a>
+        <a href="/profile">Perfil</a>
+    </div>
+</nav>
+
+<main class="collection-page">
+
+    <section class="collection-header">
+        <h1>📚 A Minha Caderneta</h1>
+        <p>Completa a tua coleção de cromos Ohana.</p>
+
+        <div class="progress-box">
+            <div class="progress-info">
+                <span id="progressText">0 / 0 cartas</span>
+                <span id="progressPercent">0%</span>
+            </div>
+
+            <div class="progress-bar">
+                <div id="progressFill"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="collection-tools">
+        <input type="text" id="searchInput" placeholder="Pesquisar carta...">
+
+        <div class="filter-buttons">
+            <button onclick="setFilter('Todas')">Todas</button>
+            <button onclick="setFilter('Tenho')">Tenho</button>
+            <button onclick="setFilter('Faltam')">Faltam</button>
+            <button onclick="setFilter('Comum')">Comuns</button>
+            <button onclick="setFilter('Rara')">Raras</button>
+            <button onclick="setFilter('Épica')">Épicas</button>
+            <button onclick="setFilter('Lendária')">Lendárias</button>
+        </div>
+    </section>
+
+    <section class="album-page">
+        <h2 id="albumTitle">Página 1</h2>
+
+        <div id="collectionGrid" class="collection-grid"></div>
+
+        <div class="page-controls">
+            <button id="prevPage">Página anterior</button>
+            <span id="pageInfo">1 / 1</span>
+            <button id="nextPage">Próxima página</button>
+        </div>
+    </section>
+
+</main>
+
+<script src="/js/site.js?v=4"></script>
+<script src="/js/collection.js?v=2"></script>
+<script src="/js/footer.js?v=2"></script>
+
+</body>
+</html>

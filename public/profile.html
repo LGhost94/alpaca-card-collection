@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil - Alpaca Cromos</title>
+
+    <link rel="icon" type="image/png" href="/images/alpaca.png?v=3">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">
+        <img src="/images/alpaca.png" class="logo-img">
+        Alpaca Cromos
+    </div>
+
+    <div class="menu">
+        <a href="/">Início</a>
+        <a href="/collection">Coleção</a>
+        <a href="/packs">Packs</a>
+    </div>
+</nav>
+
+<main class="profile-page">
+
+    <div class="profile-card">
+
+        <img id="profileImage" class="avatar" src="/images/alpaca.png" alt="Imagem de perfil">
+
+        <h1 id="profileName">A carregar...</h1>
+
+        <p class="subtitle">Perfil ligado à Twitch</p>
+
+        <div class="stats">
+            <div class="stat">
+                <strong id="packsCount">0</strong>
+                Packs
+            </div>
+
+            <div class="stat">
+                <strong id="cardsCount">0</strong>
+                Cartas
+            </div>
+
+            <div class="stat">
+                <strong id="uniqueCardsCount">0</strong>
+                Únicas
+            </div>
+        </div>
+
+        <div class="buttons">
+            <a class="btn" href="/packs">Abrir Packs</a>
+            <a class="btn secondary" href="/collection">Ver Coleção</a>
+            <a class="btn secondary" href="/">Voltar ao início</a>
+            <a class="btn secondary" href="/logout">Terminar sessão</a>
+
+            <a id="adminButton" class="btn admin hidden" href="/admin">
+                Painel Admin
+            </a>
+
+            <button class="btn secondary" id="toggleIdsButton">
+                Mostrar / esconder IDs
+            </button>
+        </div>
+
+        <div class="ids hidden" id="idsBox">
+            <p>ID interno: <span id="internalId"></span></p>
+            <p>Twitch ID: <span id="twitchId"></span></p>
+            <p>Admin: <span id="isAdmin"></span></p>
+        </div>
+
+    </div>
+
+</main>
+
+<script src="/js/site.js?v=4"></script>
+<script src="/js/profile.js?v=1"></script>
+<script src="/js/footer.js?v=2"></script>
+
+</body>
+</html>

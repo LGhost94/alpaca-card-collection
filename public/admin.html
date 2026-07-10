@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin - Alpaca Cromos</title>
+    <link rel="icon" type="image/png" href="/images/alpaca.png?v=3">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">
+        <img src="/images/alpaca.png" class="logo-img">
+        Alpaca Cromos
+    </div>
+
+    <div class="menu">
+        <a href="/">Início</a>
+        <a href="/packs">Packs</a>
+        <a href="/collection">Coleção</a>
+        <a href="/profile">Perfil</a>
+    </div>
+</nav>
+
+<div class="admin-dashboard">
+
+    <aside class="admin-sidebar">
+        <h2>👑 Admin</h2>
+
+        <button class="admin-tab active" data-tab="dashboard">📊 Dashboard</button>
+        <button class="admin-tab" data-tab="cards">🃏 Cartas</button>
+        <button class="admin-tab" data-tab="users">👥 Utilizadores</button>
+        <button class="admin-tab" data-tab="news">📰 Notícias</button>
+        <button class="admin-tab" data-tab="homepage">🏠 Homepage</button>
+    </aside>
+
+    <main class="admin-content">
+
+        <section class="admin-section active" id="dashboard">
+            <h1>Dashboard</h1>
+
+            <div class="admin-stats">
+                <div class="admin-stat"><strong id="adminStatsUsers">0</strong>Utilizadores</div>
+                <div class="admin-stat"><strong id="adminStatsCards">0</strong>Cartas</div>
+                <div class="admin-stat"><strong id="adminStatsPacks">0</strong>Packs</div>
+                <div class="admin-stat"><strong id="adminStatsCollected">0</strong>Cartas Obtidas</div>
+            </div>
+        </section>
+
+        <section class="admin-section" id="cards">
+            <h1>Cartas</h1>
+
+            <div class="form">
+                <label>Nome</label>
+                <input type="text" id="name">
+
+                <label>Raridade</label>
+                <select id="rarity">
+                    <option>Comum</option>
+                    <option>Rara</option>
+                    <option>Épica</option>
+                    <option>Lendária</option>
+                </select>
+
+                <label>Imagem</label>
+                <input type="file" id="image">
+
+                <button id="saveCard">Guardar Carta</button>
+            </div>
+
+            <br>
+            <div id="cardsList"></div>
+        </section>
+
+        <section class="admin-section" id="users">
+            <h1>Utilizadores</h1>
+            <div id="usersList"></div>
+        </section>
+
+        <section class="admin-section" id="news">
+            <h1>Notícias</h1>
+
+            <div class="form">
+                <label>Título</label>
+                <input id="newsTitle">
+
+                <label>Texto</label>
+                <textarea id="newsContent"></textarea>
+
+                <button id="saveNews">Publicar</button>
+            </div>
+
+            <br>
+            <div id="newsList"></div>
+        </section>
+
+        <section class="admin-section" id="homepage">
+            <h1>🏠 Homepage</h1>
+
+            <div class="form">
+
+                <h3>🎨 Aparência do Site</h3>
+
+                <label>Nome do Site</label>
+                <input type="text" id="siteName">
+
+                <label>Logo do Site</label>
+                <img id="siteLogoPreview"
+                     src="/images/alpaca.png"
+                     style="width:90px;height:90px;border-radius:15px;margin-bottom:15px;display:block;">
+
+                <input type="file" id="siteLogo" accept=".png,.jpg,.jpeg,.webp">
+
+                <br><br>
+
+                <label>Favicon</label>
+                <img id="siteFaviconPreview"
+                     src="/images/alpaca.png"
+                     style="width:48px;height:48px;border-radius:10px;margin-bottom:15px;display:block;">
+
+                <input type="file" id="siteFavicon" accept=".png,.jpg,.jpeg,.webp">
+
+                <hr>
+
+                <label>Título Principal</label>
+                <input type="text" id="homeTitle">
+
+                <label>Subtítulo</label>
+                <textarea id="homeSubtitle" rows="4"></textarea>
+
+                <label>Link da Publicidade</label>
+                <input type="text" id="homeAdLink" placeholder="https://...">
+
+                <hr>
+
+                <h3>📢 Publicidade</h3>
+
+                <img id="homeAdPreview"
+                     src="/images/Alpaca-Design.png"
+                     style="width:300px;border-radius:15px;margin-bottom:15px;display:block;">
+
+                <input type="file" id="homeAdImage" accept=".png,.jpg,.jpeg,.webp">
+
+                <br><br>
+
+                <h3>🖼️ Fundo da Homepage</h3>
+
+                <img id="homeBackgroundPreview"
+                     src="/images/home-bg.png"
+                     style="width:300px;border-radius:15px;margin-bottom:15px;display:block;">
+
+                <input type="file" id="homeBackground" accept=".png,.jpg,.jpeg,.webp">
+
+                <br><br>
+
+                <button id="saveHomepage">💾 Guardar Alterações</button>
+
+            </div>
+        </section>
+
+    </main>
+
+</div>
+
+<script src="/js/site.js"></script>
+<script src="/js/admin.js?v=2"></script>
+<script src="/js/footer.js?v=2"></script>
+
+</body>
+</html>

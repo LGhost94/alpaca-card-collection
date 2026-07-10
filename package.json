@@ -1,0 +1,28 @@
+{
+  "name": "site-de-cromos",
+  "version": "1.0.0",
+  "description": "Alpaca Card Collection",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "twitch",
+    "cards",
+    "alpaca"
+  ],
+  "author": "José Correia",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "express-session": "^1.19.0",
+    "multer": "^2.2.0",
+    "passport": "^0.7.0",
+    "passport-twitch-new": "^0.0.3",
+    "sqlite": "^5.1.1",
+    "sqlite3": "^6.0.1"
+  }
+}
