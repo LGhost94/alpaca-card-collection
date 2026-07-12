@@ -396,12 +396,29 @@ async function startServer() {
 
     const port = process.env.PORT || 3000;
 
-    app.listen(port, () => {
+    const server = app.listen(port, "0.0.0.0", () => {
         console.log(
-            `🚀 Servidor iniciado em http://localhost:${port}`
+            `🚀 Servidor iniciado em http://localhost:${port} (0.0.0.0)`
         );
+        console.log(`PID: ${process.pid}`);
+    });
+
+    server.on("error", (err) => {
+        console.error("❌ Server error:", err.message);
+    });
+
+    process.on("uncaughtException", (err) => {
+        console.error("❌ Uncaught exception:", err.message, err.stack);
+    });
+
+    process.on("unhandledRejection", (reason) => {
+        console.error("❌ Unhandled rejection:", reason);
     });
 }
+
+app.get("/health", (req, res) => {
+    res.status(200).send("OK");
+});
 
 app.use((req,res)=>{
 
@@ -409,6 +426,11 @@ res.status(404).sendFile(
 __dirname + "/public/404.html"
 );
 
+});
+
+app.use((err, req, res, next) => {
+    console.error("❌ Express error:", err.message, err.stack);
+    res.status(500).send("Internal Server Error");
 });
 
 startServer().catch(error => {
