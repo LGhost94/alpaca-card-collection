@@ -1,14 +1,19 @@
 const express = require("express");
 const multer = require("multer");
 const path = require("path");
+const fs = require("fs");
 
 const cardsController = require("../controllers/cardsController");
 
 const router = express.Router();
 
+const uploadDir = process.env.UPLOAD_DIR || "public/cards";
+
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, "public/cards");
+        const dest = process.env.UPLOAD_DIR || "public/cards";
+        fs.mkdirSync(dest, { recursive: true });
+        cb(null, dest);
     },
     filename: (req, file, cb) => {
         const uniqueName = Date.now() + "-" + Math.round(Math.random() * 1E9);

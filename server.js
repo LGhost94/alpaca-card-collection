@@ -41,6 +41,10 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
+if (process.env.UPLOAD_DIR) {
+    app.use("/cards", express.static(process.env.UPLOAD_DIR));
+}
+
 function isLoggedIn(req, res, next) {
     if (!req.isAuthenticated()) {
         return res.redirect("/");

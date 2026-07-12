@@ -25,6 +25,3 @@ Thumbs.db
 # Backups
 *-backup/
 backup/
-
-# Railway
-!startup.sh
