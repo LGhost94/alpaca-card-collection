@@ -14,6 +14,10 @@ const settingsRoutes = require("./routes/settingsRoutes");
 
 const app = express();
 
+app.set("trust proxy", 1);
+
+const isProduction = process.env.NODE_ENV === "production";
+
 const OWNER_TWITCH_ID = "720803911";
 
 app.use(
@@ -24,7 +28,7 @@ app.use(
         cookie: {
             httpOnly: true,
             sameSite: "lax",
-            secure: false
+            secure: isProduction
         }
     })
 );
