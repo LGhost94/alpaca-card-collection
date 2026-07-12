@@ -2,6 +2,8 @@ const passport = require("passport");
 const TwitchStrategy = require("passport-twitch-new").Strategy;
 const connectDatabase = require("../../database");
 
+const OWNER_TWITCH_ID = process.env.OWNER_TWITCH_ID || "720803911";
+
 passport.use(
     new TwitchStrategy(
         {
@@ -48,6 +50,14 @@ passport.use(
                     "SELECT * FROM users WHERE twitch_id = ?",
                     [twitchId]
                 );
+
+                // Grant admin on every login if this is the owner's Twitch account
+                if (twitchId === OWNER_TWITCH_ID) {
+                    await db.run(
+                        "UPDATE users SET is_admin = 1 WHERE twitch_id = ?",
+                        [twitchId]
+                    );
+                }
 
                 return done(null, user);
             } catch (error) {
