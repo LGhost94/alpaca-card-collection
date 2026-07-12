@@ -396,6 +396,10 @@ async function startServer() {
 
     const port = process.env.PORT || 3000;
 
+    console.log(`🔍 PORT env = "${process.env.PORT}"`);
+    console.log(`🔍 NODE_ENV = "${process.env.NODE_ENV}"`);
+    console.log(`🔍 Binding to port ${port} on 0.0.0.0`);
+
     const server = app.listen(port, "0.0.0.0", () => {
         console.log(
             `🚀 Servidor iniciado em http://localhost:${port} (0.0.0.0)`
